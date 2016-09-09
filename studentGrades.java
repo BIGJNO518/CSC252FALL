@@ -3,7 +3,8 @@ import java.util.*;
 
 public class studentGrades 
 {
-	//Please ignore this part of the program, it was just to see if my methods were working.
+	//Please ignore this part of the program, it was just to see if my methods were working. SO
+	// I will import the correct file in class and rewrite for however many lines, etc. JN
 	public static void main(String[] args) throws IOException
 	{
 		
