@@ -1,3 +1,12 @@
+/**
+ * 09/15/2016
+ * CSC 252
+ * Lead Programmer: Sean Obach
+ * Supporting Programmers: Jesse Curtin, Jason P. Nowak
+ * This Program will take student names and grades from an input file and using a conversion method will output 
+ * student names with a corresponding Letter grade to an output file. 
+ * */
+
 import java.io.*;
 import java.util.*;
 public class studentGrades
