@@ -1,0 +1,46 @@
+/**09/15/2016
+ * This program will take user input using a method with the JOptionPane feature to select between a
+ * dice game, produced in another method, a card game produced in its own method, or the option to quit. 
+ * 
+ * @author nowakj943
+ *
+ */
+import javax.swing.JOptionPane;
+public class PlayGames 
+{
+
+	
+	public static void main(String[] args) 
+	{
+		
+		int userChoice = userInput(); //holds our method for gaining user input
+		String choiceOutcome = inputConditions(userChoice);
+	}
+	public static int userInput()
+	{
+		String userChoice;
+		int numChosen;
+		
+		userChoice = JOptionPane.showInputDialog (null, "What game would you like to play?\n\n " +
+													"Press 1 for the Dice Game. Press 2 for the Card Game. Press 3 to Quit.");
+		numChosen = Integer.parseInt(userChoice);
+		
+				return numChosen;
+		
+	}
+
+	public static String inputConditions(int uc)
+	{
+		String output;
+		switch (uc)
+		{
+		
+			case 1:
+			{
+				 JOptionPane.showMessageDialog(null, "You have chosen the Dice Game");
+				//call dice game method here
+		return
+	}
+		
+	}
+}
