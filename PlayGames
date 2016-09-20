@@ -1,22 +1,19 @@
-/**09/15/2016
- * This program will take user input using a method with the JOptionPane feature to select between a
- * dice game, produced in another method, a card game produced in its own method, or the option to quit. 
- * 
- * @author nowakj943
- *
- */
 import javax.swing.JOptionPane;
+import java.util.*;
 public class PlayGames 
 {
 
 	
-	public static void main(String[] args) 
+	public static void main (String[] args) 
 	{
+		PlayGames holdChoice = new PlayGames();
 		
 		int userChoice = userInput(); //holds our method for gaining user input
-		String choiceOutcome = inputConditions(userChoice);
+		holdChoice.inputConditions(userChoice);
+	
+	
 	}
-	public static int userInput()
+	public int userInput()
 	{
 		String userChoice;
 		int numChosen;
@@ -29,7 +26,7 @@ public class PlayGames
 		
 	}
 
-	public static String inputConditions(int uc)
+	public void inputConditions(int uc)
 	{
 		String output;
 		switch (uc)
@@ -37,10 +34,115 @@ public class PlayGames
 		
 			case 1:
 			{
-				 JOptionPane.showMessageDialog(null, "You have chosen the Dice Game");
-				//call dice game method here
-		return
-	}
+				 JOptionPane.showMessageDialog(null, "You have chosen the Dice Game.");
+				// return dice game method call options in method call?
+			break;	 
+			}
+			
+			case 2:
+			{
+				JOptionPane.showMessageDialog(null, "You have chosen BlackJack.");
+				//return method call for card game
+				break;
+			}
+			
+			case 3:
+			{
+				JOptionPane.showMessageDialog(null, "Goodbye");
+				break;
+			}
+			default:
+				JOptionPane.showMessageDialog(null, "You have entered an ivalid key");
+		}
 		
+	public int DiceGameGenerator()
+	
+	{
+		Random diceGenerator = new Random ();
+		
+		
+			numChoice = JOptionPane.showInputDialog(null, "How many dice will you roll?");
+			numChoice = Integer.parseInt();
+			
+			while (numChoice > 0 && numChoice <7)
+			{
+				totalRoll = JOptionPane.showInputDialog(null, "Guess what your total roll will be:");
+				totalRoll = Integer.parseInt();
+			while((totalRoll > 0) && (totalRoll <37))
+			{
+				JOptionPane.showMessageDialog(null, "You guessed: " + totalRoll);
+			
+				if (numChoice == 6)
+				{
+					int firstDie = diceGenerator.nextInt(5) + 1;
+					int secondDie = diceGenerator.nextInt(5) + 1;
+					int thirdDie = diceGenerator.nextInt(5) + 1;
+					int fourthDie = diceGenerator.nextInt(5) + 1;
+					int fifthDie = diceGenerator.nextInt(5) + 1;
+					int sixthDie = diceGenerator.nextInt(5) + 1;
+					totalOfDice = firstDie + secondDie + thirdDie +fourthDie + fifthDie + sixthDie;
+					return firstDie, secondDie, thirdDie, fourthDie, fifthDie, sixthDie;
+					return totalOfDice;
+				
+				}
+				else if (numChoice == 5)
+				{	
+					int firstDie = diceGenerator.nextInt(5) + 1;
+					int secondDie = diceGenerator.nextInt(5) + 1;
+					int thirdDie = diceGenerator.nextInt(5) + 1;
+					int fourthDie = diceGenerator.nextInt(5) + 1;
+					int fifthDie = diceGenerator.nextInt(5) + 1;
+					int sixthDie = diceGenerator.nextInt(5) + 1;
+					
+					totalOfDice = firstDie + secondDie + thirdDie +fourthDie + fifthDie;
+					
+					return firstDie, secondDie, thirdDie, fourthDie, fifthDie;
+					return totalOfDice;
+				}
+	
+				else if (numChoice == 4)
+				{	
+					int firstDie = diceGenerator.nextInt(5) + 1;
+					int secondDie = diceGenerator.nextInt(5) + 1;
+					int thirdDie = diceGenerator.nextInt(5) + 1;
+					int fourthDie = diceGenerator.nextInt(5) + 1;
+				
+					totalOfDice = firstDie + secondDie + thirdDie +fourthDie;
+					return firstDie, secondDie, thirdDie, fourthDie;
+					return totalOfDice;
+				}
+				else if (numChoice == 3)
+				{	
+					int firstDie = diceGenerator.nextInt(5) + 1;
+					int secondDie = diceGenerator.nextInt(5) + 1;
+					int thirdDie = diceGenerator.nextInt(5) + 1;
+					
+					totalOfDice = firstDie + secondDie + thirdDie; 
+					return firstDie, secondDie, thirdDie;
+					return totalOfDice;
+				}
+				else if (numChoice == 2)
+				{	
+					int firstDie = diceGenerator.nextInt(5) + 1;
+					int secondDie = diceGenerator.nextInt(5) + 1;
+					
+					totalOfDice = firstDie + secondDie;
+					return firstDie, 
+					return secondDie;
+					return totalOfDice;
+				}
+				else if (numChoice == 1)
+				{	
+					int firstDie = diceGenerator.nextInt(5) + 1;
+					
+					totalOfDice = firstDie;
+					return firstDie;
+					return totalOfDice;
+				}
+				
+				
+			}
+	
 	}
-}
+	}
+	}
