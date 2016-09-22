@@ -1,3 +1,4 @@
+
 import java.util.*;
 import javax.swing.*;
 
@@ -5,29 +6,87 @@ public class BlackJackDealer
 {
 	public static void main (String[]args)
 	{
-	int playerNumber = 1;
-	int cardAmount = 2;
-	Scanner keyboard = new Scanner(System.in);
+		Scanner keyboard = new Scanner(System.in);
+		
+		int playerNumber = 0;
+		int cardAmount = 2;
 	
-	
-	if ((playerNumber % 2) != 0)
-	
-	for (int report; cardAmount > 0; cardAmount--)
-     {
+		int cardValue1 = 0;
+		int cardValue2 = 0;
+		int cardValue3 = 0;
+		int totalValue = 0;
+		
+		
+		if ((playerNumber % 2) == 0)
+	{
+		for (int report; cardAmount == 2; cardAmount--)
+		{
         
            int cardSuit = calcCardSuit();
            int cardNumber = calcCardNumber();
            String cardDescrip = showCardDescrip(cardNumber, cardSuit);
-           int cardValue = cardValueGen(cardNumber);
-           System.out.printf ("-%16s%3s%2\n",cardDescrip," ", cardValue);
+           cardValue1 = cardValueGen(cardNumber);
+           System.out.println (cardDescrip + " " + cardValue1);
            
+		}   
      
      
-     
-     } 
-	  
+        for (int report2; cardAmount == 1; cardAmount--)
+        {
+        
+            int cardSuit = calcCardSuit();
+            int cardNumber = calcCardNumber();
+            String cardDescrip = showCardDescrip(cardNumber, cardSuit);
+            cardValue2 = cardValueGen(cardNumber);
+           System.out.println (cardDescrip + " " + cardValue2);
+        }    
+            totalValue = cardValue1 + cardValue2;
+           System.out.println (totalValue);
+           
+            if (totalValue == 21)
+           {
+         	  System.out.println ("Congratulations, you got BlackJack!!!!");
+           } 
+            else if (totalValue < 21)
+           {
+        	   String hitOrStay = JOptionPane.showInputDialog(null, "Would you like another card Player 1?" +
+        			   										" Press 1 to hit or 2 to stay: ");
+        	   int numChosen = Integer.parseInt(hitOrStay);
+        	   
+        	   
+        	   if (numChosen == 1)  
+        	   {
+        		   
+        		   {
+        			   int cardSuit = calcCardSuit();
+        			   int cardNumber = calcCardNumber();
+        			   String cardDescrip = showCardDescrip(cardNumber, cardSuit);
+        			   cardValue3 = cardValueGen(cardNumber);
+        			   totalValue = totalValue +cardValue3;
+        			   System.out.println (cardDescrip + " " + cardValue3 + "\n" + totalValue);
+        			 
+        		   }    
+        	   }  
+        	  
+        		   
+           }
+          
+          
+          else
+        	  System.out.println ("Sorry, you busted!!");
+           {
+        	   playerNumber++;
+           }
+	
+	}
+
+	}
+	 
+
+	
+	 
 			
-}//end of main method for BlackJack Class.
+//end of main method for BlackJack Class.
 			
   /** This method will return a randomly generated number equal to a card suit
   for each card.
@@ -365,12 +424,12 @@ public class BlackJackDealer
 	  }
 	  else if (cn == 2)
 	  {
-		  value = 2;
+		  value = cn;
 		  
 	  }
 	  else if (cn == 3)
 	  {
-		  value = 3;
+		  value = cn;
 		  
 	  }
 	  else if (cn == 4)
@@ -407,7 +466,7 @@ public class BlackJackDealer
 	  {
 		  value = 10;
 	  }
-	  else if (cn == 11 || cn == 12 || cn ==13);
+	  else 
 	  {
 	  	value = 10;
 	  }
@@ -422,7 +481,4 @@ public class BlackJackDealer
 				
 			
 }
-
-
-
-
+	
