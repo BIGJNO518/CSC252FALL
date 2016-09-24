@@ -1,0 +1,46 @@
+public static void main (String[] args) 
+	{
+		
+	    PlayGames userChoice = new PlayGames();
+		
+       userChoice.userInput(); //holds our method for gaining user input
+		
+	
+	
+	}
+	
+	public void  userInput()
+	{
+		String userChoice;
+		int numChosen;
+		
+		userChoice = JOptionPane.showInputDialog (null, "What game would you like to play?\n\n " +
+													"Press 1 for the Dice Game. Press 2 for the Card Game. Press 3 to Quit.");
+		numChosen = Integer.parseInt(userChoice);
+		
+				
+		
+		if (numChosen == 1)
+		{
+			JOptionPane.showMessageDialog(null, "You have chosen the Dice Game.");
+			 PlayGames playDice = new PlayGames();  
+			 playDice.diceGameGenerator();
+				 
+		}
+			
+		else if (numChosen ==2)
+		{
+			JOptionPane.showMessageDialog(null, "You have chosen BlackJack.");
+			//return method call for card game
+			
+		}
+			
+		else if  (numChosen == 3)
+		{
+			JOptionPane.showMessageDialog(null, "Goodbye");
+				
+		}
+		else 
+			JOptionPane.showMessageDialog(null, "You have entered an ivalid key");
+		
+	}
