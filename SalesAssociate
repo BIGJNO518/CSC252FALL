@@ -1,0 +1,78 @@
+/** Working on establishing and ouputting arrays for CSC 252
+hopefully getting this to work soon
+*/
+
+
+import java.util.Scanner;
+/**
+Class for sales associate records.
+*/
+public class SalesAssociate
+{
+    private String name;
+    private double sales;
+    
+    public SalesAssociate ()
+    {
+        name = "No record";
+        sales = 0;
+    }
+  
+
+    public SalesAssociate (String initialName,
+            double initialSales)
+    {
+        set (initialName, initialSales);
+    }
+
+
+    public void set (String newName, double newSales)
+    {
+        name = newName;
+        sales = newSales;
+    }
+
+
+    public void readInput ()
+    {
+        System.out.print ("Enter name of sales associate: ");
+        Scanner keyboard = new Scanner (System.in);
+        name = keyboard.nextLine ();
+        System.out.print ("Enter associates sales: $");
+        sales = keyboard.nextDouble ();
+    }
+
+
+    public void writeOutput ()
+    {
+        System.out.println ("Name: " + name);
+        System.out.println ("Sales: $" + sales);
+    }
+
+
+    public String getName ()
+    {
+        return name;
+    }
+
+
+    public double getSales ()
+    {
+        return sales;
+    }
+  public static void main (String[]args)
+    {
+    	
+    	SalesAssociate[] entry = new SalesAssociate[(3) + 1];// Pretty sure this is all good
+    	int report;
+    		for ( report = 1; report < entry.length -1; report++ )// array.length-1 is limit
+    		{
+    			entry[report] = new SalesAssociate();
+    			System.out.println("Enter Data for assoc " + report);
+    			entry[report].readInput();
+    			System.out.println();
+    		}
+    		 System.out.println(entry 1,2,3);//don't understand how to output arrays, book not helpful. 
+    }
+  }
+
